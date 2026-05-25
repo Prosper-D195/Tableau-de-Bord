@@ -1,0 +1,424 @@
+/* ==========================================================================
+   1. RESET & CONFIGURATION GÉNÉRALE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. STRUCTURE GLOBALE FLUIDE (Mobile-First)
+   ========================================================================== */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-areas: 
+        "header"
+        "sidebar"
+        "main";
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   3. BARRE LATÉRALE (SIDEBAR)
+   ========================================================================== */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #0c4a6e;
+    color: #f8fafc;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.brand {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand svg {
+    width: 35px;
+    height: 35px;
+    color: #f59e0b;
+}
+
+.brand h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.brand .slogan {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.nav-links, .nav-settings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 8px;
+}
+
+.nav-links a, .nav-settings a {
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: #075985;
+    transition: background 0.2s;
+}
+
+.nav-links a:hover, .nav-settings a:hover, .nav-links a.active {
+    background-color: #0369a1;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   4. EN-TÊTE (HEADER)
+   ========================================================================== */
+.header {
+    grid-area: header;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    z-index: 10;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.search-bar {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+    gap: 10px;
+    background-color: #f1f5f9;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+.search-bar svg {
+    width: 20px;
+    height: 20px;
+    color: #64748b;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.user-profile-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-icon svg {
+    width: 24px;
+    height: 24px;
+    color: #334155;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #f59e0b;
+    background-image: url('https://via.placeholder.com/35');
+    background-size: cover;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+/* BANNIÈRE AVEC PHOTO DE PAPAYE INTÉGRÉE (MÉTHODE 1) */
+.welcome-section.with-bg {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    
+    /* Dégradé noir transparent + Image de substitution de fruits exotiques de haute qualité */
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                url('Images/photo-verger.svg'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section.with-bg .welcome-text .greeting {
+    color: #f1f5f9;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.8rem;
+}
+
+.welcome-section.with-bg .welcome-text h2 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.welcome-section.with-bg .large-avatar {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+.btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #0ea5e9;
+    color: white;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #f59e0b;
+}
+
+/* ==========================================================================
+   5. CONTENU PRINCIPAL (MAIN CONTENT)
+   ========================================================================== */
+.main-content {
+    grid-area: main;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.main-content h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+/* GRILLE INTERNE DES SECTEURS (GRID RAPIDE) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-status {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5px;
+}
+.status-good { background-color: #10b981; }
+.status-warning { background-color: #ef4444; }
+
+.project-card h4 {
+    font-size: 1rem; color: #0f172a; padding-left: 5px;
+}
+
+.project-card p {
+    color: #64748b; font-size: 0.85rem; line-height: 1.5; padding-left: 5px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+.card-actions button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+/* BLOCS LATERAUX (ANNONCES & VARIETES) */
+.announcements-card, .trending-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+.announcement-item {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 12px;
+}
+
+.announcement-item:last-child {
+    padding-bottom: 0; border-bottom: none; margin-bottom: 0;
+}
+
+.announcement-item h5 {
+    font-size: 0.85rem; color: #0f172a; margin-bottom: 4px;
+}
+
+.announcement-item p {
+    font-size: 0.75rem; color: #64748b; line-height: 1.4;
+}
+
+.trending-card {
+    display: grid;
+    gap: 15px;
+}
+
+.trending-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mini-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.var-solo { background-color: #fb923c; }
+.var-formosa { background-color: #facc15; }
+.var-red { background-color: #f87171; }
+
+.trending-item .username {
+    font-size: 0.85rem; font-weight: 700; color: #0f172a;
+}
+
+.trending-item .project-name {
+    font-size: 0.75rem; color: #64748b;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERIES (Écrans Moyens et Grands)
+   ========================================================================== */
+
+/* Tablettes (768px et plus) */
+@media (min-width: 768px) {
+    .header {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        column-gap: 30px;
+    }
+    
+    .user-profile {
+        justify-content: flex-end;
+        gap: 20px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .welcome-section.with-bg .welcome-text h2 {
+        font-size: 1.3rem; /* Titre plus grand sur tablette */
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .btn {
+        width: auto;
+    }
+}
+
+/* Ordinateurs de Bureau (1024px et plus) */
+@media (min-width: 1024px) {
+    .dashboard-container {
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: 150px 1fr;
+        grid-template-areas: 
+            "sidebar header"
+            "sidebar main";
+    }
+
+    .sidebar {
+        grid-template-rows: auto 1fr auto;
+        padding: 25px;
+        gap: 35px;
+    }
+
+    .nav-links, .nav-settings {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .nav-links a, .nav-settings a {
+        text-align: left;
+        font-size: 0.95rem;
+        background-color: transparent;
+    }
+
+    .main-content {
+        padding: 30px 40px;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "projects announcements"
+            "projects trending";
+    }
+
+    .projects-section { grid-area: projects; }
+    .announcements-section { grid-area: announcements; }
+    .trending-section { grid-area: trending; }
+}

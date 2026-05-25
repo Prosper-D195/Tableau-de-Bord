@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calina Fruits - Tableau de Bord</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A1,1 0 0,1 13,5A1,1 0 0,1 12,6A1,1 0 0,1 11,5A1,1 0 0,1 12,4M12,18C8.69,18 6,15.31 6,12C6,10 7,8.25 8.5,7.18L9.75,8.62C8.69,9.38 8,10.61 8,12C8,14.21 9.79,16 12,16C14.21,16 16,14.21 16,12C16,10.61 15.31,9.38 14.25,8.62L15.5,7.18C17,8.25 18,10 18,12C18,15.31 15.31,18 12,18Z"/></svg>
+                <div class="brand-text">
+                    <h1>Calina Fruits</h1>
+                    <p class="slogan">La douceur de l'exotique, à chaque bouchée !</p>
+                </div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#" class="active">Vue Globale</a>
+                <a href="#">Suivi des 1250 Pieds</a>
+                <a href="#">Irrigation & Intrants</a>
+                <a href="#">Récoltes & Ventes</a>
+                <a href="#">Main d'œuvre</a>
+            </nav>
+
+            <nav class="nav-settings">
+                <a href="#">Paramètres</a>
+                <a href="#">Support Technique</a>
+                <a href="#">Sécurité</a>
+            </nav>
+        </aside>
+
+        <header class="header">
+            <div class="search-bar">
+                <svg viewBox="0 0 24 24"><path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20,18.5L18.5,20L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/></svg>
+                <input type="text" placeholder="Rechercher un lot, une récolte...">
+            </div>
+            
+            <div class="user-profile">
+                <div class="notification-icon">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12,2A2,2 0 0,0 10,4A2,2 0 0,0 10,4.29C7.12,5.14 5,7.82 5,11V17L3,19V20H21V19L19,17V11C19,7.82 16.88,5.14 14,4.29A2,2 0 0,0 14,4A2,2 0 0,0 12,2M12,22A2,2 0 0,0 14,20H10A2,2 0 0,0 12,22Z"/></svg>
+                </div>
+                <div class="user-profile-info">
+                    <div class="avatar"></div>
+                    <span class="user-name">Exploitant Agricole</span>
+                </div>
+            </div>
+
+            <div class="welcome-section with-bg">
+                <div class="avatar large-avatar"></div>
+                <div class="welcome-text">
+                    <span class="greeting">Bonjour,</span>
+                    <h2>Gestionnaire Calina Fruits (@verger_0.5ha)</h2>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn">Saisir Récolte</button>
+                <button class="btn">Noter Intrant</button>
+                <button class="btn btn-primary">Exporter Rapport</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            
+            <section class="projects-section">
+                <h3>Secteurs du Verger (0.5 Hectare)</h3>
+                <div class="projects-grid">
+                    
+                    <div class="project-card">
+                        <div class="card-status status-good"></div>
+                        <h4>Zone Nord - 400 Pieds</h4>
+                        <p>Stade de floraison avancé. Irrigation stable. Prochaine récolte estimée dans 3 semaines.</p>
+                        <div class="card-actions">
+                            <button title="Favoris">★</button>
+                            <button title="Voir les détails">👁</button>
+                            <button title="Partager">☍</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-status status-good"></div>
+                        <h4>Zone Centre - 450 Pieds</h4>
+                        <p>Arbres en pleine fructification. Récolte en cours. Calibre des papayes conforme aux attentes.</p>
+                        <div class="card-actions">
+                            <button title="Favoris">★</button>
+                            <button title="Voir les détails">👁</button>
+                            <button title="Partager">☍</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-status status-warning"></div>
+                        <h4>Zone Sud - 400 Pieds</h4>
+                        <p>Légère baisse de pression constatée sur le système de goutte-à-goutte. Inspection requise.</p>
+                        <div class="card-actions">
+                            <button title="Favoris">★</button>
+                            <button title="Voir les détails">👁</button>
+                            <button title="Partager">☍</button>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-status status-good"></div>
+                        <h4>Pépinière & Remplacements</h4>
+                        <p>50 jeunes plants de réserve prêts pour combler les manques éventuels et sécuriser les 1250 pieds.</p>
+                        <div class="card-actions">
+                            <button title="Favoris">★</button>
+                            <button title="Voir les détails">👁</button>
+                            <button title="Partager">☍</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="announcements-section">
+                <h3>Notes d'Agronomie</h3>
+                <div class="announcements-card">
+                    <div class="announcement-item">
+                        <h5>Alerte Météo & Irrigation</h5>
+                        <p>Hausse des températures prévue cette semaine. Ajuster le cycle d'arrosage à 15L/pied/jour.</p>
+                    </div>
+                    <div class="announcement-item">
+                        <h5>Suivi Sanitaire Calina</h5>
+                        <p>Traitement préventif biologique contre les pucerons planifié pour le lot Centre vendredi matin.</p>
+                    </div>
+                    <div class="announcement-item">
+                        <h5>Objectif de Rendement</h5>
+                        <p>Rappel cible : Maintenir une moyenne de 30 à 40 kg de fruits par arbre sur l'année.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="trending-section">
+                <h3>Variétés & Rendements</h3>
+                <div class="trending-card">
+                    <div class="trending-item">
+                        <div class="mini-avatar var-solo"></div>
+                        <div>
+                            <span class="username">Papaye Solo</span>
+                            <p class="project-name">Excellente teneur en sucre (Brix 14)</p>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="mini-avatar var-formosa"></div>
+                        <div>
+                            <span class="username">Papaye Formosa</span>
+                            <p class="project-name">Gros calibre, idéal pour le marché local</p>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="mini-avatar var-red"></div>
+                        <div>
+                            <span class="username">Red Lady</span>
+                            <p class="project-name">Forte résistance aux virus du verger</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
